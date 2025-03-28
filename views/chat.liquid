@@ -15,7 +15,6 @@
 
     <section class=>
         <form method="post" action="/chat">
-        
             <label>
                 Naam 
                 <input type="text" name="from" aria-label="Naam" placeholder="b.v John Doe" required>
@@ -27,15 +26,14 @@
             </label>
 
             <button type="submit">Ervaring Delen</button>
-
         </form>
     </section>
 
 
     {% for chat in chat %}
         <section>
-        <h3>{{ chat.from }}</h3>
-        <p>{{ chat.text }}</p>
+            <h3>{{ chat.from }}</h3>
+            <p>{{ chat.text }}</p>
         </section>
     {% endfor %}
 
