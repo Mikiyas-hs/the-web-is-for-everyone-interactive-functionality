@@ -1,0 +1,35 @@
+{% render 'partials/head.liquid' %}
+
+<head>
+    <h1>Community Drops</h1>
+    <p>Deel wat je van de oefening vond, lees ervaringen van anderen en steun elkaar in de reis door rouw. <b>je bent niet alleen</b></p>
+</head>
+
+<main>    
+
+    <article>
+        <h2>Nieuwste berichten</h2>
+    </article>
+    
+    {% comment %} {% for chat in chat %} {% endcomment %}
+
+    <section class=>
+        <form method="post" action="/chat">
+            <label>Naam</label>
+            <input type="text" name="from" aria-label="Naam" placeholder="b.v John Doe" required>
+            <label>Uw Bericht</label>
+            <textarea name="text" placeholder="b.v Ik heb een vraag" required></textarea>
+            <button type="submit">Ervaring Delen</button>
+        </form>
+    </section>
+
+
+    {% for chat in chat %}
+        <section>
+        <h3>{{ chat.from }}</h3>
+        <p>{{ chat.text }}</p>
+        </section>
+    {% endfor %}
+
+</main>
+{% render 'partials/foot.liquid' %}
