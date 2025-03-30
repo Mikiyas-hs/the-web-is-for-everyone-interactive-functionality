@@ -11,19 +11,16 @@
         <h2>Nieuwste berichten</h2>
     </article>
     
-    {% comment %} {% for chat in chat %} {% endcomment %}
-
     <section class=>
-        <form method="post" action="/chat">
-            <label>
-                Naam 
-                <input type="text" name="from" aria-label="Naam" placeholder="b.v John Doe" required>
+        <form class="form" method="post" action="/chat">
+        
+            <label for="from">Naam
+            <input type="text" id="from" name="from" aria-label="Naam" placeholder="b.v John Doe" required>
             </label>
 
-            <label>
-                Uw Bericht
-                <textarea name="text" placeholder="b.v Ik heb een vraag" required></textarea>
-            </label>
+            <label for="text">Uw Bericht
+                <textarea id="text" name="text" aria-label="Bericht schrijven" required></textarea>
+                </label>
 
             <button type="submit">Ervaring Delen</button>
         </form>
