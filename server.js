@@ -56,7 +56,7 @@ chat: chatResponseJson.data,
   })
 })
 
-
+// post request
 app.post('/chat', async (request, response) => {
   const { from, text } = request.body;
 
@@ -69,9 +69,21 @@ app.post('/chat', async (request, response) => {
   response.redirect(303, '/chat'); 
 });
 
+// delete 
+app.post('/chat/delete/:id', async (request, response) => {
+  const { id } = request.params;  
 
+  const apiResponse = await fetch(`https://fdnd-agency.directus.app/items/dropandheal_messages/${id}`, {
+    method: 'DELETE',
+    headers: { 'Content-Type': 'application/json;charset=UTF-8' },
+  });
 
-
+  if (apiResponse.ok) {
+    response.redirect(303, '/chat');
+  } else {
+    response.status(500).send('Er is iets misgegaan met het verwijderen van het bericht.');
+  }
+});
 
 
 
