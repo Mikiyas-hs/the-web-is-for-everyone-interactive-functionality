@@ -31,6 +31,8 @@
         <section>
             <h3>{{ chat.from }}</h3>
             <p>{{ chat.text }}</p>
+            <form method="post" action="/chat/delete/{{ chat.id }}">
+            <button type="delete">Verwijder Bericht</button>
         </section>
     {% endfor %}
 
