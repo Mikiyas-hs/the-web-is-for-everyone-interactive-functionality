@@ -51,6 +51,9 @@ app.get('/chat', async function (request, response){
 const chatResponse = await fetch('https://fdnd-agency.directus.app/items/dropandheal_messages')
 const chatResponseJson = await chatResponse.json();
 
+// berichten van nieuw naar oud inplaats van oud naar nieuw
+const reversedChat = chatResponseJson.data.reverse();
+
 response.render('chat.liquid', {
 chat: chatResponseJson.data,
   })
