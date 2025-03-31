@@ -1,9 +1,19 @@
 // Importeer het npm package Express (uit de door npm aangemaakte node_modules map)
 // Deze package is geïnstalleerd via `npm install`, en staat als 'dependency' in package.json
-import express from 'express'
+import express, { json } from 'express'
 
 // Importeer de Liquid package (ook als dependency via npm geïnstalleerd)
 import { Liquid } from 'liquidjs';
+
+const apiEndpoint = "https://fdnd-agency.directus.app/items/dropandheal_"
+const apiTask = "task"
+const apiExercise = "exercise"
+
+const taskResponse = await fetch(`${apiEndpoint}${apiTask}`)
+const exerciseResponse = await fetch(`${apiEndpoint}${apiExercise}`)
+
+const taskResponseJSON = await taskResponse.json()
+const exerciseResponseJSON = await exerciseResponse.json()
 
 // Maak een nieuwe Express applicatie aan, waarin we de server configureren
 const app = express()
@@ -21,12 +31,64 @@ app.engine('liquid', engine.express());
 
 // Stel de map met Liquid templates in
 // Let op: de browser kan deze bestanden niet rechtstreeks laden (zoals voorheen met HTML bestanden)
-app.set('views', './views')
 
 
-console.log('Let op: Er zijn nog geen routes. Voeg hier dus eerst jouw GET en POST routes toe.')
+//get route voor index is in de root als / 
+app.get('/', async function (request, response){
+  const taskResponse = await fetch('https://fdnd-agency.directus.app/items/dropandheal_task/?filter={"id":1}')
+  const exerciseResponse = await fetch('https://fdnd-agency.directus.app/items/dropandheal_exercise/?filter={"task":1}')
+  const taskResponseJSON = await taskResponse.json()
+  const exerciseResponseJSON = await exerciseResponse.json()
+
+  response.render('index.liquid', {
+    tasks: taskResponseJSON.data,
+    exercise: exerciseResponseJSON.data})
+})
+
+
+//get route voor community chat is in de root als /chat
+app.get('/chat', async function (request, response){
+const chatResponse = await fetch('https://fdnd-agency.directus.app/items/dropandheal_messages')
+const chatResponseJson = await chatResponse.json();
+
+response.render('chat.liquid', {
+chat: chatResponseJson.data,
+  })
+})
+
+
+app.post('/chat', async (request, response) => {
+  const { from, text } = request.body;
+
+  await fetch('https://fdnd-agency.directus.app/items/dropandheal_messages', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json;charset=UTF-8' }, 
+    body: JSON.stringify({ from, text }) 
+  });
+
+  response.redirect(303, '/chat'); 
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /*
+
 // Zie https://expressjs.com/en/5x/api.html#app.get.method over app.get()
 app.get(…, async function (request, response) {
   
