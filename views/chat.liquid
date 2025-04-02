@@ -1,9 +1,9 @@
 {% render 'partials/head.liquid' %}
 
-<head>
+<header>
     <h1>Community Drops</h1>
     <p>Deel wat je van de oefening vond, lees ervaringen van anderen en steun elkaar in de reis door rouw. <b>je bent niet alleen</b></p>
-</head>
+</header>
 
 <main>    
 
@@ -11,7 +11,7 @@
         <h2>Nieuwste berichten</h2>
     </article>
     
-    <section class=>
+    <section class="one">
         <form class="form" method="post" action="/chat">
         
             <label for="from">Naam
@@ -28,12 +28,16 @@
 
 
     {% for chat in chat %}
-        <section>
+        <section class="chat-message">
             <h3>{{ chat.from }}</h3>
             <p>{{ chat.text }}</p>
+
+            {% comment %} delete loop {% endcomment %}
+            
             {% if chat.from == "Mikiyas" %}
             <form method="post" action="/chat/delete/{{ chat.id }}">
             <button type="submit">Verwijder Bericht</button>
+            </form>
             {% endif %}
         </section>
     {% endfor %}
