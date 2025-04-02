@@ -48,7 +48,6 @@ app.get('/', async function (request, response){
 
 //get route voor community chat is in de root als /chat
 app.get('/chat', async function (request, response){
-const chatResponseJson = await chatResponse.json();
   const chatResponse = await fetch('https://fdnd-agency.directus.app/items/dropandheal_messages?&limit=-1');
   const chatResponseJson = await chatResponse.json();
 
@@ -56,7 +55,7 @@ const chatResponseJson = await chatResponse.json();
 const reversedChat = chatResponseJson.data.reverse();
 
 response.render('chat.liquid', {
-chat: chatResponseJson.data,
+  chat: chatResponseJson.data,
   })
 })
 
@@ -83,7 +82,7 @@ app.post('/chat/delete/:id', async (request, response) => {
   });
 
   if (apiResponse.ok) {
-    response.redirect(303, '/chat');
+    response.redirect(303, '/chat');  
   } else {
     response.status(500).send('Er is iets misgegaan met het verwijderen van het bericht.');
   }
