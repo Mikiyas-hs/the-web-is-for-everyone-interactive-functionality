@@ -48,7 +48,6 @@ app.get('/', async function (request, response){
 
 //get route voor community chat is in de root als /chat
 app.get('/chat', async function (request, response){
-const chatResponse = await fetch('https://fdnd-agency.directus.app/items/dropandheal_messages')
 const chatResponseJson = await chatResponse.json();
 
 // berichten van nieuw naar oud inplaats van oud naar nieuw
