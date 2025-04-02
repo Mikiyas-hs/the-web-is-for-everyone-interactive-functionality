@@ -31,8 +31,10 @@
         <section>
             <h3>{{ chat.from }}</h3>
             <p>{{ chat.text }}</p>
+            {% if chat.from == "Mikiyas" %}
             <form method="post" action="/chat/delete/{{ chat.id }}">
             <button type="submit">Verwijder Bericht</button>
+            {% endif %}
         </section>
     {% endfor %}
 
