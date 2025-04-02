@@ -1,0 +1,176 @@
+:root {
+    font-size: 16px; 
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+/* Header stijlen */
+.chat-header {
+    background-color: #292929;
+    padding: 1.5rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.chat-header h1 {
+    font-size: 2em;
+    margin: 0;
+    color: #ffffff;
+}
+
+.chat-header p {
+    font-size: 1rem;
+    margin: 0.5rem 0 0;
+    max-width: 30rem;
+    text-align: center;
+}
+
+.chat-header p b {
+    color: white;
+}
+
+/* Berichtenlijst stijlen */
+.chat-article {
+    margin-bottom: 2rem;
+}
+
+.chat-article h2 {
+    font-size: 1.5rem;
+    color: #f1f1f1;
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+    text-align: center;
+}
+
+.chat-message {
+    background-color: #1d1d1d;
+    border-radius: 2em;
+    padding: 1.5rem;
+    margin: 1.5rem auto;
+    max-width: 800px;
+}
+
+.chat-message h3 {
+    margin: 0 0 0.5rem 0;
+    font-size: 1.1rem;
+    color: #f8f8f8;
+    font-weight: 600;
+}
+
+.chat-message .message-date {
+    display: block;
+    font-size: 0.8rem;
+    color: #667;
+    margin-bottom: 1rem;
+    font-style: italic;
+}
+
+.chat-message p {
+    margin: 0;
+    color: #f0f0f0;
+    line-height: 1.6;
+}
+
+.chat-message form {
+    margin-top: 1rem;
+}
+
+.chat-message button[type="submit"] {
+    background-color: #e0e0e0;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    color: #333;
+}
+
+/* Plaats bericht button */
+.floating-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 10px 20px;
+    background-color: #87CEEB;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    z-index: 100;
+    transition: all 0.2s ease;
+}
+
+/* Overlay stijlen */
+.overlay {
+    display: none;  
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); 
+    justify-content: center;
+    align-items: center;
+    z-index: 99;
+}
+
+.overlay-content {
+    background-color: rgb(37, 37, 37);
+    padding: 2rem;
+    border-radius: 10px;
+    max-width: 500px;
+    width: 90%;
+    text-align: center;
+}
+
+.overlay-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.overlay-form input,
+.overlay-form textarea {
+    padding: 1rem;
+    border-radius: 5px;
+    border: 1px solid #333;  
+    background-color: #333;   
+    color: white;             
+    font-size: 1rem;
+}
+
+.overlay-form button {
+    padding: 1rem;
+    background-color: #ADD8E6;  
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+#closeFormButton {
+    background-color: #333;  
+    border: 1px solid #ADD8E6;  
+    color: white;
+    margin-top: 10px;
+}
+
+#overlay h2 {
+    color: white;
+}
+
+label {
+    color: white;
+}
