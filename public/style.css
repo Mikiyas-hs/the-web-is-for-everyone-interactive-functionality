@@ -8,7 +8,7 @@ body {
 }
 
 /* header */
-header {
+header .index {
     padding: 1.25em;
     display: flex;
     /* grid-template-columns: auto 1fr auto; 
@@ -35,7 +35,7 @@ header p {
 }
 
 
-header::before {
+header .index ::before {
     content: "";
     width: 4em;
     height: 0.13em;
@@ -44,7 +44,7 @@ header::before {
     top: 4em;
 }
 
-header::after {
+header .index ::after {
     content: "";
     position: absolute;
     width: 14em; 
@@ -116,7 +116,7 @@ header::after {
 
 
 
-main {
+.tasks {
     background: #161616;
     /* width: 27em; */
     padding: 3em 0; 
@@ -205,6 +205,4 @@ ul li {
     margin-right: 5px;
 }
 
-
-/* chatpagina  */
 
