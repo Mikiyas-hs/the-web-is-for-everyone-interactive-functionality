@@ -24,8 +24,8 @@
             {% comment %} delete loop {% endcomment %}
             
             {% if chat.from == "Mikiyas" %}
-            <form method="post" action="/chat/delete/{{ chat.id }}">
-            <button type="submit">Verwijder Bericht</button>
+            <form method="post" action="/chat/delete/{{ chat.id }}" id="deleteForm">
+            <button type="submit" class="deleteBtn">Verwijder Bericht</button>
             </form>
             {% endif %}
         </section>
@@ -54,7 +54,7 @@
             <textarea id="text" name="text" aria-label="Bericht schrijven" placeholder="bijv. verhaal over een dierbare die je bent verloren" required></textarea>
 
             <footer>
-                <button type="submit">Ervaring Delen</button>
+            <button type="submit" id="submitBtn">Ervaring Delen</button>
                 <button type="button" id="closeFormButton">Annuleer</button>
             </footer>
         </form>
