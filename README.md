@@ -103,3 +103,46 @@ Om als developer aan dit project te werken clone deze repo installeer npm start 
 ## Licentie
 
 This project is licensed under the terms of the [MIT license](./LICENSE).
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2.4.1 Analyseert een vraag, signaleert knelpunten en volgt de aangeboden oplossingsrichting.
+
+Uitleg in eigen woorden: 
+
+
+
+
+
+Ik bekijk eerst goed wat de vraag of het probleem is. Ik probeer te ontdekken wat er niet goed is gegaan of dat iets beter kan (de knelpunten) daarna volg ik de oplossing die wordt voorgesteld of die ik zelf heb bedacht om het probleem aan te pakken 
+
+bijvoorbeeld: 
+
+Ik had een user test gedaan waarin suleyman aangaf dat er geen delete button was of een patch waardoor je als eindgebruiker je het bericht kan wijzigen ik heb dit geanalyseerd en dus gekeken wat voor op dit moment en voor dit project het handigste is om toe te passen aan de hand daarvan besloot ik dus om te kiezen voor de delete functie omdat ik vond dat dat een betere optie is en daarna ben ik aan de slag gegaan met het maken van deze delete functie door middel van de aangeboden oplossingsrichtingen.
+
+waarom dit goede bewijslast is
+
+
+
+
+
+Dit is goede bewijslast omdat ik laat zien dat ik kritisch naar feedback kijk een probleem herken en vervolgens de juiste stappen onderneem om het probleem op te lossen door het probleem te analyseren daarna een keuze te maken wat ik ga toepassen en uiteindelijk de oplossing toepas.
+
+Wat ik de volgende keer beter kan doen
+
+
+
+
+
+Eerder een user test doen al vanaf het moment dat ik het heb gedesigned eig om feedback vragen waardoor je sneller achter problemen kunt komen waardoor je meer ruimte krijgt om op zoek te gaan naar meerdere verbeter punten in een applicatie 
