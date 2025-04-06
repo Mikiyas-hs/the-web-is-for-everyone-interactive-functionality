@@ -25,7 +25,7 @@ en tijdens deze sprint lag de focus op de chat functie waarbij eind gebruikers d
 
 <!-- Voeg een mooie poster visual of video toe 📸 -->
 
-<img src="/assets/Schermafbeelding 2025-04-06 152504.png">
+![alt text](image-1.png)
 
 
 <!-- Voeg een link toe naar GitHub Pages 🌐-->
